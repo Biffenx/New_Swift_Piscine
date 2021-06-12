@@ -15,27 +15,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-85-JZN">
-                                <rect key="frame" x="175" y="438" width="64" height="30"/>
-                                <state key="normal" title="Click Me!"/>
-                                <connections>
-                                    <action selector="Btn1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0d-Dp-1Uh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuY-0l-1bW">
-                                <rect key="frame" x="115" y="141" width="184" height="21"/>
+                                <rect key="frame" x="20" y="141" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-h9-ek4">
+                                <rect key="frame" x="82.5" y="738" width="249" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-85-JZN">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Click Me!"/>
+                                        <connections>
+                                            <action selector="Btn1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0d-Dp-1Uh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asx-5c-k51">
+                                        <rect key="frame" x="159" y="0.0" width="90" height="30"/>
+                                        <state key="normal" title="Click Me too!"/>
+                                        <connections>
+                                            <action selector="Btn2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRk-ah-ZfH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OuY-0l-1bW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="83e-tG-bOy"/>
-                            <constraint firstItem="LDb-85-JZN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CKO-Cf-3bM"/>
-                            <constraint firstItem="OuY-0l-1bW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="Jp7-uT-ZHA"/>
-                            <constraint firstItem="OuY-0l-1bW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Mfe-ZV-O9X"/>
-                            <constraint firstItem="LDb-85-JZN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cRG-M3-LL4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SZm-h9-ek4" secondAttribute="bottom" constant="94" id="2Ix-Je-8w3"/>
+                            <constraint firstItem="OuY-0l-1bW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Ef-DM-0G6"/>
+                            <constraint firstItem="OuY-0l-1bW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="D4f-jx-DSi"/>
+                            <constraint firstItem="OuY-0l-1bW" firstAttribute="centerX" secondItem="SZm-h9-ek4" secondAttribute="centerX" id="Jso-fB-Dbk"/>
+                            <constraint firstItem="OuY-0l-1bW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xxo-Iy-bAN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
