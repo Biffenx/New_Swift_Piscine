@@ -16,24 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuY-0l-1bW">
-                                <rect key="frame" x="20" y="141" width="374" height="21"/>
+                                <rect key="frame" x="20" y="141" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-h9-ek4">
-                                <rect key="frame" x="82.5" y="738" width="249" height="30"/>
+                                <rect key="frame" x="68" y="738" width="278" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-85-JZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
-                                        <state key="normal" title="Click Me!"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="30"/>
+                                        <state key="normal" title="Stop, Confetti"/>
                                         <connections>
                                             <action selector="Btn1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0d-Dp-1Uh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asx-5c-k51">
-                                        <rect key="frame" x="159" y="0.0" width="90" height="30"/>
-                                        <state key="normal" title="Click Me too!"/>
+                                        <rect key="frame" x="190" y="0.0" width="88" height="30"/>
+                                        <state key="normal" title="Confetti, plz!"/>
                                         <connections>
                                             <action selector="Btn2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRk-ah-ZfH"/>
                                         </connections>
