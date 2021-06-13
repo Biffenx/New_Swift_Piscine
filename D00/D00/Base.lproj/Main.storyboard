@@ -40,19 +40,49 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y87-nY-gzX">
+                                <rect key="frame" x="0.0" y="204" width="414" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="G2W-IU-RNK"/>
+                                </constraints>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-cH-6pT">
+                                <rect key="frame" x="148" y="263" width="118" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Add Alarm"/>
+                                <connections>
+                                    <action selector="Btn3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qra-Wv-zo2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmd-pb-1Jg">
+                                <rect key="frame" x="20" y="321" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SZm-h9-ek4" secondAttribute="bottom" constant="94" id="2Ix-Je-8w3"/>
+                            <constraint firstItem="Y87-nY-gzX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6D1-0s-o0M"/>
                             <constraint firstItem="OuY-0l-1bW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Ef-DM-0G6"/>
                             <constraint firstItem="OuY-0l-1bW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="D4f-jx-DSi"/>
+                            <constraint firstItem="Y87-nY-gzX" firstAttribute="centerX" secondItem="OuY-0l-1bW" secondAttribute="centerX" id="He7-m9-bfi"/>
                             <constraint firstItem="OuY-0l-1bW" firstAttribute="centerX" secondItem="SZm-h9-ek4" secondAttribute="centerX" id="Jso-fB-Dbk"/>
+                            <constraint firstItem="Fmd-pb-1Jg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MQu-S8-ZyG"/>
+                            <constraint firstItem="1eL-cH-6pT" firstAttribute="top" secondItem="Y87-nY-gzX" secondAttribute="bottom" constant="8" id="NFR-8U-n2V"/>
+                            <constraint firstItem="Y87-nY-gzX" firstAttribute="top" secondItem="OuY-0l-1bW" secondAttribute="bottom" constant="42.5" id="T0r-iw-EJ0"/>
+                            <constraint firstItem="1eL-cH-6pT" firstAttribute="centerX" secondItem="Y87-nY-gzX" secondAttribute="centerX" id="agV-9q-Fo4"/>
+                            <constraint firstItem="Fmd-pb-1Jg" firstAttribute="top" secondItem="1eL-cH-6pT" secondAttribute="bottom" constant="14" id="gKo-Li-TMa"/>
                             <constraint firstItem="OuY-0l-1bW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xxo-Iy-bAN"/>
+                            <constraint firstItem="Fmd-pb-1Jg" firstAttribute="centerX" secondItem="1eL-cH-6pT" secondAttribute="centerX" id="z3Y-Bv-Lut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="alarmLabel" destination="Fmd-pb-1Jg" id="KCM-OZ-CFj"/>
                         <outlet property="label1" destination="OuY-0l-1bW" id="fpx-eW-Vsq"/>
+                        <outlet property="time_picker" destination="Y87-nY-gzX" id="9sY-it-c3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

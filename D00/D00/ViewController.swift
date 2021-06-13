@@ -19,14 +19,16 @@ class ViewController: UIViewController {
     var imageNames = ["snowflake-1", "diamond", "heart", "star"]
     var velocities = [50, 100, 150, 200]
 
+    @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var label1: UILabel!
-        
+    @IBOutlet weak var time_picker: UIDatePicker!
+    
     @IBAction func Btn1(_ sender: UIButton) {
         label1.font = UIFont(name:"Didot", size: 30.0)
         self.emitterLayer.birthRate = 0;
+        
     }
     
-  
     
     @IBAction func Btn2(_ sender: UIButton) {
         label1.font = UIFont(name:"Times new Roman", size: 30.0)
@@ -35,15 +37,28 @@ class ViewController: UIViewController {
         view.layer.addSublayer(emitterLayer)   }
     
     
+    @IBAction func Btn3(_ sender: UIButton) {
+        
+//        let format = DateFormatter()
+//        format.dateFormat = "mm:ss"
+        let date1 = Date()
+        let date = time_picker.date
+        print(date)
+        let timeInterval = date.timeIntervalSince(date1)
+        print("Intervall:\(timeInterval)")
+        alarmLabel.text = ("Your alarm will go of in: \(timeInterval) sec.")
+        let date2 = Date().addingTimeInterval(timeInterval)
+        let timer = Timer(fireAt: date2, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+//    }
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        label1.text = message
         
-        let date = Date().addingTimeInterval(10)
-        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
-        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+        label1.text = message
+        alarmLabel.text = ""
 
                      
         // Do any additional setup after loading the view.
@@ -55,7 +70,7 @@ class ViewController: UIViewController {
           return Int(arc4random_uniform(UInt32(400)))
       }
   
-    
+   
     
     func confetti() -> [CAEmitterCell]
     {
