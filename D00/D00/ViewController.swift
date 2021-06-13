@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController {
     
     let message = "You have clicked Me!"
@@ -26,31 +24,24 @@ class ViewController: UIViewController {
     @IBAction func Btn1(_ sender: UIButton) {
         label1.font = UIFont(name:"Didot", size: 30.0)
         self.emitterLayer.birthRate = 0;
-        
     }
-    
     
     @IBAction func Btn2(_ sender: UIButton) {
         label1.font = UIFont(name:"Times new Roman", size: 30.0)
         emitterLayer.emitterCells = confetti()
         self.emitterLayer.birthRate = 1;
-        view.layer.addSublayer(emitterLayer)   }
-    
+        view.layer.addSublayer(emitterLayer)
+    }
     
     @IBAction func Btn3(_ sender: UIButton) {
-        
-//        let format = DateFormatter()
-//        format.dateFormat = "mm:ss"
         let date1 = Date()
         let date = time_picker.date
-        print(date)
         let timeInterval = date.timeIntervalSince(date1)
-        print("Intervall:\(timeInterval)")
-        alarmLabel.text = ("Your alarm will go of in: \(timeInterval) sec.")
+        let y = Int(round(timeInterval))
+        alarmLabel.text = ("Your alarm will go of in: \(y) sec.")
         let date2 = Date().addingTimeInterval(timeInterval)
         let timer = Timer(fireAt: date2, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
-//    }
     }
     
     override func viewDidLoad()
@@ -59,19 +50,17 @@ class ViewController: UIViewController {
         
         label1.text = message
         alarmLabel.text = ""
-
-                     
-        // Do any additional setup after loading the view.
     }
+    
     var randomNumber: Int {
         return Int(arc4random_uniform(UInt32(dimension)))
     }
+    
     var randomStart: Int {
           return Int(arc4random_uniform(UInt32(400)))
       }
   
    
-    
     func confetti() -> [CAEmitterCell]
     {
         var cells = [CAEmitterCell]()
@@ -89,7 +78,6 @@ class ViewController: UIViewController {
             cell.contents = UIImage(named: imageNames[randomNumber])!.cgImage
             cells.append(cell)
         }
-              
           return cells
     }
         
@@ -100,15 +88,5 @@ class ViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
                self.present(alert, animated: true)
            }
-    
-    
-
-    
-//  func Alert() {
-//    let alert = UIAlertController(title: "Notice", message: "The font was changed.", preferredStyle: .alert)
-//    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-////    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-//    self.present(alert, animated: true)
-//    }
 }
 
