@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     @IBAction func Btn1(_ sender: UIButton) {
         label1.font = UIFont(name:"Didot", size: 30.0)
+        
         self.emitterLayer.birthRate = 0;
     }
     
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
         let date = time_picker.date
         let timeInterval = date.timeIntervalSince(date1)
         let y = Int(round(timeInterval))
-        alarmLabel.text = ("Your alarm will go of in: \(y) sec.")
+        alarmLabel.text = ("Your alarm will go off in: \(y) sec.")
         let date2 = Date().addingTimeInterval(timeInterval)
         let timer = Timer(fireAt: date2, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
