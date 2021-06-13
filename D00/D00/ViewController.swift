@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
     
     let message = "You have clicked Me!"
@@ -23,21 +25,27 @@ class ViewController: UIViewController {
         label1.font = UIFont(name:"Didot", size: 30.0)
         self.emitterLayer.birthRate = 0;
     }
+    
+  
+    
     @IBAction func Btn2(_ sender: UIButton) {
         label1.font = UIFont(name:"Times new Roman", size: 30.0)
-        self.emitterLayer.birthRate = 1;
         emitterLayer.emitterCells = confetti()
+        self.emitterLayer.birthRate = 1;
         view.layer.addSublayer(emitterLayer)   }
     
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-    label1.text = message
+        label1.text = message
         
-
+        let date = Date().addingTimeInterval(10)
+        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
 
                      
-                 view.layer.addSublayer(emitterLayer)
         // Do any additional setup after loading the view.
     }
     var randomNumber: Int {
@@ -70,13 +78,22 @@ class ViewController: UIViewController {
           return cells
     }
         
+    @objc func runCode()
+           {
+               let alert = UIAlertController(title: "Wake Up!", message: "Alarm on", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+               self.present(alert, animated: true)
+           }
     
     
-  func Alert() {
-    let alert = UIAlertController(title: "Notice", message: "The font was changed.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-    self.present(alert, animated: true)
-    }
+
+    
+//  func Alert() {
+//    let alert = UIAlertController(title: "Notice", message: "The font was changed.", preferredStyle: .alert)
+//    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+////    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+//    self.present(alert, animated: true)
+//    }
 }
 
